@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}
+home
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+  .card{
+    transition: transform 0.5s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.01);
+    box-shadow: 8px 6px 9px;
+  }
+
+  .col{
+    box-shadow: 2px 3px 5px;
+    padding: 0.23cm 30px;
+    background-color: rgb(234, 240, 240);
+    border: 1px solid whitesmoke;
+    margin: 1cm 0.50cm 0cm;
+    border-radius: 9px;
+  }
+
+  .main{
+    position: absolute;
+    bottom: 40%; 
+    left: 10%;
+    text-align: center;
+  }
+  .main-title{
+    color:rgb(10, 24, 71);
+  }
+</style>
+
+<div class="container-fluid p-0" style="position: relative;">
+  <img class="img-fluid w-100" style="object-fit: cover; height: 470px;" src="https://image.marriage.com/advice/wp-content/uploads/2018/10/newly-married-couple-1.jpg" alt="">
+  <div class="main">
+    <h3 class="text-title main-title">"Innovative Concepts Creative Design
+      <br>,Flawless Execution"</h3>
+    <h2 class="text-light">FIND THE BEST EVENT</h2>
+    <input type="text" style="width:60%; border-radius: 5px; border-color: rgb(7, 2, 54); border-style: none;">
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+  <div class="col ak">
+    <h2 class="fs-4">Join over 145,000 couples</h2>
+    <p>planning with WeddingWire.in</p>
+  </div>
+  <div class="col ak">
+    <h2 class="fs-4">Read +120,000 reviews</h2>
+    <p>for wedding vendors across India</p>
+  </div>
+  <div class="col ak">
+    <h2 class="fs-4 ">Over 74,000 professionals</h2>
+    <p>in our local vendor directory</p>
+  </div>
+</div>
+</div>
+
+<hr style="width: 90%; margin: 30px 80px;">
+
+
+<h2 class="text-title mt-4 ms-5 text-primary">Wedding Planners</h2>
+
+<div class="container">
+  <div class="row mt-3">
+      {% for i in eve %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <a href="{% url 'eventdetails' %}" class="text-decoration-none">
+              <div class="card h-100 border border-dark">
+                  <img src="{{i.img.url}}" class="card-img-top img-thumbnail p-2 pt-4" alt="{{i.name}}">
+                  <div class="card-body">
+                      <h5 class="card-title">{{i.name}}</h5>
+                      <p class="card-text">{{i.descr}}</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Booking System
+{% endblock %}
+
+{% block content %}
+<style>
+  .form-container {
+    text-align: center;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    max-width: 500px; 
+  }
+
+  .form-container h1 {
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+  }
+
+  .form-group input, .form-group select, .form-group textarea {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #524b4b;
+    border-radius: 4px;
+  }
+
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #007bff;
+  }
+
+  .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+  }
+
+  .btn:hover {
+    background-color: #138496;
+  }
+</style>
+
+<div class="container">
+  <div class="form-container">
+    <h2>Book Your Event</h2><br>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

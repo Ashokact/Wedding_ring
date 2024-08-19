@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Responsive Grid Layout Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        background: linear-gradient(90deg,rgb(4, 14, 56), rgb(14, 3, 54));
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    .btn {
+        color: white;
+    }
+
+    .btn:hover {
+        color: rgb(138, 132, 132);
+    }
+
+    .img {
+        width: 50%;
+        height: auto;
+        border-radius: 50%;
+        margin: 30px 50px;
+    }
+
+    .active {
+        width: 50%;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .count {
+        background: linear-gradient(90deg, rgb(37, 40, 218), rgb(4, 8, 61)); 
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 6cm;
+        height: 5cm;
+        margin: 0cm 1cm 1cm;
+        padding-top: 1.80cm;
+        font-weight: 400;
+        box-shadow: 3px 5px 7px rgb(8, 8, 8);
+        transition: transform 0.5s ease-in-out;
+        backdrop-filter: transform 0.5s ease-in-out;
+    }
+
+    .count:hover {
+        transform: scale(1.02);
+        backdrop-filter: blur(4px);
+    }
+
+    .mostact {
+        width: 80%;
+    }
+
+    .mcol {
+        border: 1px solid black;
+        margin: 4px;
+        padding: 4px;
+        border-radius: 5px;
+    }
+
+    .online {
+        width: 70%;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 79% 21%;
+    }
+
+    .container2 {
+        overflow-y:scroll;
+        position: fixed;
+        top: 56px; 
+        right: 0;
+        width: 22%;
+        height: calc(100vh - 56px);
+        background-color: rgb(14, 3, 54);
+        color: white;
+    }
+</style>
+</head>
+<body>
+    {% block content %}
+    {% if user.is_authenticated and user.is_staff %}
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'crew_home' %}">Wed Ring</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'crew_home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Features' %}">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'crewlogout' %}">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="grid-container">
+            <div class="container container1">
+                <div class="container-fluid secondcon" style="overflow-y: scroll; height: 540px; width: auto;">
+                    <h1 class="m-4 fs-3">Welcome {{ user.username }}</h1>
+                    <div class="container">
+                        <div class="row eventdet">
+                            <h4 class="text-center count col">
+                                Total Booking: <br>
+                                {{ booking_count }}
+                            </h4>
+                            <h4 class="text-center count col">
+                                The Next Event
+                            </h4>
+                            <h4 class="text-center count col">
+                                Offer Create
+                            </h4>
+                        </div>
+                    </div>
+                    
+                    <div class="m-0 p-0">
+                        <h3 class="ms-5 mb-0">Most active users</h3>
+                    </div>
+                    <div class="row mostact text-center ms-5 mt-0">
+                        <div class="col mcol">
+                            <img class="img-fluid active" src="https://cdn0.weddingwire.in/usr/5/0/8/3/utmr_1105083.jpg?r=60095" alt="">
+                            <h6>Saranya</h6>
+                        </div>
+                        <div class="col mcol">
+                            <img class="img-fluid active" src="https://cdn0.weddingwire.in/usr/0/2/4/2/utmr_1300242.jpg?r=79236" alt="">
+                            <h6>Ashok</h6>
+                        </div>
+                        <div class="col mcol">
+                            <img class="img-fluid active" src="https://cdn0.weddingwire.in/usr/7/1/8/6/utbp_2677186.jpg?r=33461" alt="">
+                            <h6>Divya</h6>
+                        </div>
+                        <div class="col mcol">
+                            <img class="img-fluid active" src="https://cdn0.weddingwire.in/usr/5/3/4/9/utmr_2685349.jpg?r=22059" alt="">
+                            <h6>Malar</h6>
+                        </div>
+                        <div class="col mcol">
+                            <img class="img-fluid active" src="https://cdn0.weddingwire.in/usr/1/8/3/6/utmr_2411836.jpg?r=98859" alt="">
+                            <h6>Inthumathui</h6>
+                        </div>
+                    </div>
+                    <h3 class="btn m-0 btn-center ms-5 mt-0" style="background-color: rgb(5, 5, 85);">More View</h3>
+
+                    <div class="container m-0">
+                        <div class="row mt- mb-0" style="width: 5cm;">
+                            <h3 class="ms-5 mt-3 m-0 col" style="width: 0.66cm;">Online <p class="spinner-grow spinner-grow-sm text-success mt-4 p-0" style="width: 15px;"></p></h3>
+                        </div>
+                        <div class="row mostact ms-5 mt-0 mb-1" style="border: 1px solid black; padding: 15px;">
+                            <div class="col"><img class="img-fluid online" src="https://cdn0.weddingwire.in/usr/5/7/2/6/utmr_2685726.jpg?r=78280" alt=""></div>
+                            <div class="col"><img class="img-fluid online" src="https://cdn0.weddingwire.in/usr/6/9/7/8/utmr_2126978.jpg?r=59285" alt=""></div>
+                            <div class="col"><img class="img-fluid online" src="https://cdn0.weddingwire.in/usr/9/0/9/4/utbp_2599094.jpg?r=78234" alt=""></div>
+                            <div class="col"><img class="img-fluid online" src="https://cdn0.weddingwire.in/usr/8/5/9/0/utmr_1278590.jpg?r=96720" alt=""></div>
+                            <div class="col"><img class="img-fluid online" src="https://cdn0.weddingwire.in/usr/2/6/4/5/utmr_2682645.jpg?r=92169" alt=""></div>
+                            <div class="col"><img class="img-fluid online" src="https://cdn0.weddingwire.in/usr/5/3/4/9/utmr_2685349.jpg?r=22059" alt=""></div>
+                        </div>
+                        <h3 class="btn m-0 btn-center ms-5 mt-0" style="background-color: rgb(5, 5, 85);">More View</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container container2">
+                <div class="css" style="background-color: rgb(14, 3, 54); color: white;">
+                    <img class="img" src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="">
+                    <p class="text-center">{{ user.username }}</p>
+                    <div><i class="fa-solid fa-gift fs-5"></i><button class="btn">Gifts and Favours</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fa-regular fa-envelope fs-5"></i><button class="btn">Invites and Stationery</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fas fa-heart fs-5"></i><button class="btn">Fitness and Health</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fa-solid fa-ring fs-5"></i><button class="btn">Bachelor & Bachelorette Fun</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fa-solid fa-user-tie fs-5"></i><button class="btn">Wedding Fashion</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fa-solid fa-snowflake fs-5"></i><button class="btn">Beauty, Hair & Makeup</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fa-solid fa-radiation fs-5"></i><button class="btn">Traditions & Ceremonies</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fa-solid fa-hand-holding-heart fs-5"></i><button class="btn">Trending Weddings</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                    <div><i class="fa-solid fa-hand-holding-heart "></i><button class="btn">Fitness and Health</button></div> <hr class="m-0 bg-light w-75 ms-5">
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container">
+            <h2>This is a staff-only page.</h2>
+        </div>
+    {% endif %}
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

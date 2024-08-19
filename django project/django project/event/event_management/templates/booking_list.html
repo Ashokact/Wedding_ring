@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Booking List
+{% endblock %}
+
+{% block content %}
+<style>
+    table , th , td{
+        border: 0.1ch solid;
+    }
+</style>
+<div class="container">
+    <h2>Booking List</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Customer Phone</th>
+                    <th>Event</th>
+                    <th>Booking Date</th>
+                    <th>Booking On</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.cus_name }}</td>
+                    <td>{{ booking.cus_ph }}</td>
+                    <td>{{ booking.name }}</td>
+                    <td>{{ booking.booking_date }}</td>
+                    <td>{{ booking.booking_on }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No bookings found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profile Management
+{% endblock %}
+
+{% block content %}
+<style>
+    form {
+        text-align: center;
+        padding: 0.55cm;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        background-color: #f8f9fa;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0.22, 0.44);
+        width: 100%;
+        max-width: 400px; 
+    }
+    
+    form button {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .button-container .btn {
+        display: inline-block;
+        width: 3cm;
+    }
+
+    .button-container .btn a {
+        color: white;
+        text-decoration: none;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .container {
+        margin-top: 2rem;
+    }
+</style>
+
+<h2 class="mt-5">
+    <small class="fs-2 text-primary">Create</small>
+    <small class="fs-2 text-info">Profile</small>
+</h2>
+
+<div class="d-flex justify-content-center">
+    <form method="post" class="w-100 w-md-50">
+        {% csrf_token %}
+        {{ profile_form.as_p }}
+        <button class="btn btn-primary" style="width: 3cm;" type="submit">Save Profile</button>
+    </form>
+</div>
+
+<div class="container">
+    <div class="button-container m-3">
+        <button class="btn btn-primary m-1"><a href="{% url 'booking_list' %}" class="nav-link">Booking List</a></button>
+        <button class="btn btn-primary m-1"><a href="" class="nav-link">Blog</a></button>
+        <button class="btn btn-primary m-1"><a href="" class="nav-link">Referral</a></button>
+        <button class="btn btn-primary m-1"><a href="" class="nav-link">Contact</a></button>        
+    </div>
+</div>
+
+{% endblock %}

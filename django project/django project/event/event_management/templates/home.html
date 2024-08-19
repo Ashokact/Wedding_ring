@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+home
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+  .card{
+    transition: transform 0.5s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.01);
+    box-shadow: 8px 6px 9px;
+}
+</style>
+
+
+
+
+
+<div class="container-fluid p-0">
+  <img class="img-fluid w-100" style="object-fit: cover; height: auto;" src="https://image.marriage.com/advice/wp-content/uploads/2018/10/newly-married-couple-1.jpg" alt="">
+</div>
+
+
+
+<h2 class="text-title mt-5 ms-5 text-danger">Wedding Planners</h2>
+
+<div class="container">
+  <div class="row">
+      {% for i in eve %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <a href="{% url 'eventdetails' %}" class="text-decoration-none">
+              <div class="card h-100 border border-dark">
+                  <img src="{{i.img.url}}" class="card-img-top img-thumbnail p-2 pt-4" alt="{{i.name}}">
+                  <div class="card-body">
+                      <h5 class="card-title">{{i.name}}</h5>
+                      <p class="card-text">{{i.descr}}</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock %}

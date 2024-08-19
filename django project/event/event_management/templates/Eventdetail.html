@@ -1,0 +1,429 @@
+{% extends 'base.html' %}
+
+{% block title %}
+event detail
+{% endblock %}
+
+{% block content %}
+<style>
+  
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    justify-content: space-around;
+
+}
+
+.text-title {
+    margin-top: 2cm;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin: 10px 0;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+ 
+.card-img-top {
+    transition: transform 10.00s;
+} 
+
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #777;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth; 
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: 10px; 
+  border: 1px solid #ccc;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.w-25{
+  background-image: linear-gradient(to bottom right, rgb(15, 3, 68),rgb(109, 86, 241),rgb(72, 38, 223),rgb(95, 65, 228),blue,rgb(5, 13, 58),rgb(76, 17, 238));
+}
+
+.card p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 0;
+}
+
+
+.w-100{
+  filter: grayscale(20%);
+}
+
+.w-100:hover{
+  filter: grayscale(0%);
+  filter: blur(1px);
+  z-index: -1;
+}
+
+
+</style>
+
+
+<img src="https://www.weddingwire.in/assets/img/listing-sector-banner/8.avif" alt="" class="w-100 m-0">
+
+<div class="container-fluid">
+    <h2 class="text-title">Wedding photographers</h2>
+
+    <div class="row ms-5 me-5">
+        <div class="col">
+            <div class="card" >
+                <img src="https://cdn0.weddingwire.in/vendor/8685/3_2/640/jpg/clickphotos-38_15_178685-163176791266198.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Click Photos</h5>
+                    <p class="card-text">Ramnagar - Jim Corbett</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 55000</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/7607/3_2/640/jpg/wedding-photography-kerala-wedding-photography-couple-shot-25_15_407607-170659598558850.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Click Photos</h5>
+                    <p class="card-text">Ramnagar - Nainital</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 40000</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/2408/3_2/640/jpg/wedding-photographers-the-clicks-photography-couple-shot-6_15_442408-168009370774826.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">The Clicks Photography</h5>
+                    <p class="card-text">Jawali, Kangra</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 33000</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/8020/3_2/640/jpg/untitled-41_15_468020-171463059545176.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Ivory Films</h5>
+                    <p class="card-text">Secunderabad, Hyderabad</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 30000</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/5397/3_2/640/jpeg/92af647d-63d7-488f-a206-0a0617d825b9_15_185397-159394128796348.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">The Wedding Birds</h5>
+                    <p class="card-text">Kakadeo, Kanpur</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 50000</a>
+                </div>
+            </div>
+        </div>
+         <div class="col">
+            <div class="card" style="width: 7cm;">
+                <img src="https://cdn0.weddingwire.in/vendor/0897/3_2/640/jpg/file-1651471742340_15_330897-165147174366291.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Flutter Wid Shutter, Rajkot</h5>
+                    <p class="card-text">Ahmedabad</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 20000</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 7cm;">
+                <img src="https://cdn0.weddingwire.in/vendor/7122/3_2/640/jpg/af9a9515-ed1_15_447122-170558547259961.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">ProWeddingStories</h5>
+                    <p class="card-text">Baramunda, Bhubaneswar</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 24000</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 7cm;">
+                <img src="https://cdn0.weddingwire.in/vendor/0897/3_2/640/jpg/file-1651471742340_15_330897-165147174366291.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Flutter Wid Shutter, Rajkot</h5>
+                    <p class="card-text">Ahmedabad</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 35000</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <h2 class="mt-5 mb-0">Photographers by region</h2>
+<div class="row " id="card-container">
+  <div class="card col m-5 w-25 me-0 ">
+      <div class="card-body text-light">
+          <h2>Chennai</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Ahmedabad</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col m-5 w-25 me-0">
+      <div class="card-body ">
+          <h2 class="text-light">Delhi NCR</h2>
+          <p class="text-light">2,621 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Kolkata</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Lucknow</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Agra</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Gurgaon</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Indore</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Patna</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+</div>
+
+<h2 class="text-title m-0">Caterers</h2>
+<div class="row ms-5 me-5">
+    <div class="col">
+        <div class="card" >
+            <img src="https://cdn0.weddingwire.in/vendor/0145/3_2/640/jpg/srp-9541_15_360145-171240860530134.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Brown Sugar, Jaipur</h5>
+                <p class="card-text">Tonk Road, Jaipur</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 30000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/4652/3_2/640/jpg/f75516aa-71de-4921-b6af-b722516fbdbd_15_424652-169398269528424.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Lucknowala Catering</h5>
+                <p class="card-text"> Gomti Nagar, Lucknow</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 40000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/5453/3_2/640/jpg/catering-culinary-affaire-good-display-2_15_355453-160327331335249.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Culinary Affaire</h5>
+                <p class="card-text">Culinary Affaire, Gurgaon</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 44000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/0448/3_2/640/jpg/file-1688051755408_15_450448-168805175740298.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Suhana Catering & Events</h5>
+                <p class="card-text">Rasulgarh, Bhubaneswar</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 50000</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h2 class="text-title m-0">Wedding planners</h2>
+<div class="row ms-5 me-5">
+    <div class="col">
+        <div class="card" >
+            <img src="https://cdn0.weddingwire.in/vendor/9432/3_2/640/jpg/56b13e1061e8f488b213f6599d78efda_15_379432-169201129484463.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Blue Horse</h5>
+                <p class="card-text">Basheer Bagh, Hyderabad</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 50000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/2092/3_2/640/jpg/dsc07273_15_412092-171336305682077.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Lilac Moon Events</h5>
+                <p class="card-text"> Andheri West, Mumbai</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 49000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/1146/3_2/640/jpeg/whatsapp-image-2022-06-26-at-9-31-33-pm-15-412642-165633521948778_15_451146-168742164812523.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Classique Events</h5>
+                <p class="card-text">Old Goa, North Goa</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 45000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/8492/3_2/640/jpg/weddingplanner-raja-park-jawahar-nagar-jaipur-wedding-decor-3_15_438492-170134364584742.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Incredible Events</h5>
+                <p class="card-text">Jawahar Nagar, Jaipur</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 42000</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2 class="text-title m-2">Entertainment</h2>
+<div class="row ms-5 me-5">
+    <div class="col">
+        <div class="card" >
+            <img src="https://cdn0.weddingwire.in/vendor/0790/3_2/640/jpg/img-20221018-wa0092_15_390790-167652807766136.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Blue Horse</h5>
+                <p class="card-text">MG Road, Bangalore</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 29000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/8134/3_2/640/jpg/wedding-choreographers-d-effects-entertainment-stage-performance-6_15_448134-168432346482253.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">D Effects Entertainment</h5>
+                <p class="card-text">Ghatlodia, Ahmedabad</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 30000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/1767/3_2/640/jpg/a-405_15_71767.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Nachanshah</h5>
+                <p class="card-text">Mathura Road, South Delhi</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 40000</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://cdn0.weddingwire.in/vendor/5240/3_2/640/jpg/ladies-sangeet_15_75240.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">RJ Choreography</h5>
+                <p class="card-text">Rohini, North Delhi</p>
+                <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                <a href="{% url 'eventlist' %}" class="btn btn-primary">₹ 59000</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

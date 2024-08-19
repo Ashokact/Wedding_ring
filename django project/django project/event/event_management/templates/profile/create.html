@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+profile managment
+{% endblock %}
+
+
+{% block content %}
+
+
+<h2 class="mt-5"><small class="fs-2 text-primary">Create</small><small class="fs-2 text-info">Profile</small> </h2>
+  <div class="d-flex justify-content-center"> 
+    <form method="post">
+        {% csrf_token %}
+        {{ profile_form.as_p }}
+        <button class="btn btn-dark" type="submit">Save Profile</button>
+    </form>
+   </div>
+    
+    <div class="container m-5">
+        <button class="btn btn-primary"><a href="{% url 'booking_list' %}" class="nav-link">Booking List</a></button>
+    </div>
+
+
+{% endblock %}

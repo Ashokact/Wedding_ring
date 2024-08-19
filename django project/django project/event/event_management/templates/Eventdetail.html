@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+
+{% block title %}
+event detail
+{% endblock %}
+
+{% block content %}
+<style>
+  
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    justify-content: space-around;
+    /* background-image: linear-gradient(to bottom right, rgb(132, 215, 221),rgb(193, 207, 209),rgb(126, 161, 163),rgb(168, 190, 197),rgb(195, 197, 197),rgb(226, 233, 235),rgb(10, 205, 231)); */
+    /* background-color: #3C99DC; */
+
+}
+
+.text-title {
+    margin-top: 2cm;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin: 10px 0;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+ 
+.card-img-top {
+    transition: transform 10.00s;
+} 
+
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #777;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth; 
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: 10px; 
+  border: 1px solid #ccc;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.w-25{
+  background-image: linear-gradient(to bottom right, rgb(15, 3, 68),rgb(109, 86, 241),rgb(72, 38, 223),rgb(95, 65, 228),blue,rgb(5, 13, 58),rgb(76, 17, 238));
+}
+
+.card p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 0;
+}
+
+
+.w-100{
+  filter: grayscale(20%);
+}
+
+.w-100:hover{
+  filter: grayscale(0%);
+  filter: blur(1px);
+  z-index: -1;
+}
+
+
+</style>
+
+
+<img src="https://www.weddingwire.in/assets/img/listing-sector-banner/8.avif" alt="" class="w-100 m-0">
+
+<div class="container-fluid">
+    <h2 class="text-title">Wedding photographers</h2>
+
+    <div class="row ms-5 me-5">
+        <div class="col">
+            <div class="card" >
+                <img src="https://cdn0.weddingwire.in/vendor/8685/3_2/640/jpg/clickphotos-38_15_178685-163176791266198.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Click Photos</h5>
+                    <p class="card-text">Ramnagar - Jim Corbett</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/7607/3_2/640/jpg/wedding-photography-kerala-wedding-photography-couple-shot-25_15_407607-170659598558850.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Click Photos</h5>
+                    <p class="card-text">Ramnagar - Nainital</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/2408/3_2/640/jpg/wedding-photographers-the-clicks-photography-couple-shot-6_15_442408-168009370774826.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">The Clicks Photography</h5>
+                    <p class="card-text">Jawali, Kangra</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/8020/3_2/640/jpg/untitled-41_15_468020-171463059545176.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Ivory Films</h5>
+                    <p class="card-text">Secunderabad, Hyderabad</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://cdn0.weddingwire.in/vendor/5397/3_2/640/jpeg/92af647d-63d7-488f-a206-0a0617d825b9_15_185397-159394128796348.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">The Wedding Birds</h5>
+                    <p class="card-text">Kakadeo, Kanpur</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+         <div class="col">
+            <div class="card" style="width: 7cm;">
+                <img src="https://cdn0.weddingwire.in/vendor/0897/3_2/640/jpg/file-1651471742340_15_330897-165147174366291.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Flutter Wid Shutter, Rajkot</h5>
+                    <p class="card-text">Ahmedabad</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 7cm;">
+                <img src="https://cdn0.weddingwire.in/vendor/7122/3_2/640/jpg/af9a9515-ed1_15_447122-170558547259961.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">ProWeddingStories</h5>
+                    <p class="card-text">Baramunda, Bhubaneswar</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 7cm;">
+                <img src="https://cdn0.weddingwire.in/vendor/0897/3_2/640/jpg/file-1651471742340_15_330897-165147174366291.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Flutter Wid Shutter, Rajkot</h5>
+                    <p class="card-text">Ahmedabad</p>
+                    <p><small><i></i>1 promotion</small><small>-10%</small></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <h2 class="mt-5 mb-0">Photographers by region</h2>
+<div class="row " id="card-container">
+  <div class="card col m-5 w-25 me-0 ">
+      <div class="card-body text-light">
+          <h2>Chennai</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Ahmedabad</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col m-5 w-25 me-0">
+      <div class="card-body ">
+          <h2 class="text-light">Delhi NCR</h2>
+          <p class="text-light">2,621 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Kolkata</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Lucknow</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Agra</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Gurgaon</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col  m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Indore</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+  <div class="card col m-5 w-25 me-0">
+      <div class="card-body">
+          <h2 class="text-light">Patna</h2>
+          <p class="text-light">521 photographers</p>
+      </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

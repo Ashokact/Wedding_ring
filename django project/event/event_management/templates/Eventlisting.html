@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+event list
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <img src="https://cdn1.weddingwire.in/assets/img/listing-sector-banner/1.avif" alt="" class="w-100" height="250px">
+</div>
+
+
+<h2 class="text-title mt-5 text-primary">Events</h2>
+
+<div class="container-fluid" >
+  {% for i in eve %}
+<div class="card p-1 m-2 ms-4 mt-4" style="width: 18rem; display: inline-block; " >
+  <img src="{{i.img.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.descr}}</p>
+    <a href="{% url 'bookingsystem' %}" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+
+<div class="d-flex m-5">
+  <div class="m-3 ms-5">
+    <img style="border-radius: 50%;" src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-1.jpg" alt="">
+    <p>Before the <br> wedding</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;"  src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-2.jpg" alt="">
+    <p>The wedding <br> ceremony</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;"  src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-3.jpg" alt="">  
+    <p>The wedding <br> banquet</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;"  src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-4.jpg" alt="">
+    <p>The services for your wedding</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;"  src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-5.jpg" alt="">
+    <p>Wedding fashion</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;"  src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-6.jpg" alt="">
+    <p>Health and beauty</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;"  src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-7.jpg" alt="">
+    <p>Honeymoon</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;" src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-8.jpg" alt="">
+    <p>After the wedding</p>
+  </div>
+  <div class="m-3">
+    <img style="border-radius: 50%;" src="https://www.weddingwire.in/assets/img/articles/categories/articles-cat-global-11.jpg" alt="">
+    <p>The wedding <br> reception</p>
+  </div>
+</div>
+
+
+{% endblock %}
